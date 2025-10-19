@@ -24,7 +24,16 @@ body{font-family: 'Segoe UI', Roboto, 'Noto Sans', sans-serif;margin:0;backgroun
 .channel h2{margin:0 0 8px 0;font-size:1.1rem}
 .channel p{color:var(--muted);margin:0}
 .services .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin:12px 0}
-.services .gallery img{width:100%;height:150px;object-fit:cover;border-radius:8px}
+.services .gallery img{
+  width:100%;
+  height:200px;
+  object-fit:contain; /* affiche l'image en entier sans recadrage */
+  background-color:#f6f6fb; /* léger fond pour les images aux bords transparents */
+  border-radius:8px;
+}
+/* règles additionnelles pour afficher les images de la page hero et single gallery */
+.hero{padding:56px 24px;background-image:url('../assets/hero.jpg');background-size:cover;background-position:center;border-radius:8px;margin:16px}
+.services .gallery.single img{height:auto;max-height:520px;object-fit:contain}
 .order{margin:12px 0}
 .order-link{color:#5fa3ff;text-decoration:none}
 .order-links{display:flex;gap:12px}
